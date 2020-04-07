@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AppImmo"
+    }
+  },
+  "defaultProject": "AppImmo",
+  "cli": {
+    "analytics": "d437238a-09e6-4338-9ec8-42f0f9bdd4a3"
+  }
 }
