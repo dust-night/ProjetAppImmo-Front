@@ -1,0 +1,33 @@
+.change {
+
+    color: black;
+    background-color: rgb(49, 98, 189);
+    border-radius: 20px;
+    width: 20%;
+
+}
+
+.change2 {
+
+    color: white;
+    background-color:purple;
+    border-radius: 20px;
+    width: 22%;
+
+}
+
+.kikou {
+
+    background-color: #957DAD;
+    color: #E0BBE4;
+    font-size: 20px;
+    border: 1px dotted black;
+    /* border-radius: 20px; */
+
+    text-align: center;
+}
+
+.bordure{
+
+    border: 2px solid black;
+}
