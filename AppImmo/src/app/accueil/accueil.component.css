@@ -1,0 +1,20 @@
+h1
+{
+  
+  font: 3em "Fira Sans", serif;
+  color:#037F8C;
+  padding:16px;
+  font-weight:lighter;
+  text-align:center;
+  display:block;
+  margin:16px;
+   
+}
+p{
+  font-size: 25px;
+  
+  color:#037F8C; 
+  text-align:center;
+  
+  font: italic 1.5em "Fira Sans", serif;
+}
