@@ -1,7 +1,7 @@
 <br>
 <br>
-<h1>Bienvenue sur Agence NSMAP</h1>
-<p>L'application de gestion immobilière</p>
+<h1>Calendrier évènements</h1>
+
 
 <div class="row text-center">
     <div class="col-md-4">
@@ -13,14 +13,14 @@
           [(viewDate)]="viewDate"
           (viewDateChange)="closeOpenMonthViewDay()"
         >
-          Previous
+          Précédent
         </div>
         <div
           class="btn btn-outline-secondary"
           mwlCalendarToday
           [(viewDate)]="viewDate"
         >
-          Today
+          Maintenant
         </div>
         <div
           class="btn btn-primary"
@@ -29,7 +29,7 @@
           [(viewDate)]="viewDate"
           (viewDateChange)="closeOpenMonthViewDay()"
         >
-          Next
+          Suivant
         </div>
       </div>
     </div>
@@ -43,21 +43,21 @@
           (click)="setView(CalendarView.Month)"
           [class.active]="view === CalendarView.Month"
         >
-          Month
+          Mois
         </div>
         <div
           class="btn btn-primary"
           (click)="setView(CalendarView.Week)"
           [class.active]="view === CalendarView.Week"
         >
-          Week
+          Semaine
         </div>
         <div
           class="btn btn-primary"
           (click)="setView(CalendarView.Day)"
           [class.active]="view === CalendarView.Day"
         >
-          Day
+          Jour
         </div>
       </div>
     </div>
@@ -100,9 +100,9 @@
   <br /><br /><br />
   
   <h3>
-    Edit events
+    Editer un évènement 
     <button class="btn btn-primary pull-right" (click)="addEvent()">
-      Add new
+      Ajouter un évènement
     </button>
     <div class="clearfix"></div>
   </h3>
