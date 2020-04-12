@@ -1,3 +1,6 @@
+import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
+import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
+import { BienimmobComponent } from './bienimmob/bienimmob.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientComponent } from './client/client.component';
 import { ClientFormComponent } from './client/client-form/client-form.component';
@@ -19,8 +22,14 @@ const routes: Routes = [
 },
 
 {path:'proprietaires', component:ProprietairesComponent},
-{path:'accueil', component:AccueilComponent}
+{path:'accueil', component:AccueilComponent},
 
+{path: 'bienimmob', component: BienimmobComponent, children: [
+{path: 'tableauimmo', component: TableauimmoComponent},
+{path: 'immoform', component: ImmobFormComponent}
+
+
+]},
 
 ];
 

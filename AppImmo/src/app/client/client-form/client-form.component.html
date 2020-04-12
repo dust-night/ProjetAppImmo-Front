@@ -10,7 +10,7 @@
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
 
                         <div class="row">
@@ -60,10 +60,10 @@
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <input type="submit" class="btn btn-sucess" [disabled]="!form.valid" *ngIf="!mode"
-                                    value="save" class="change" />
-                                <input type="submit" class="btn btn-sucess" [disabled]="!form.valid" *ngIf="mode"
-                                    value="update" class="change2" />
+                                <input type="submit" class="btn btn-sucess" style="background-color:#F5CD56; border-radius: 20px;"
+                                    value="Ajouter" />
+                                <input type="submit" class="btn btn-sucess" style="background-color:#037F8C; border-radius: 20px;"
+                                    value="Modifier"  />
                             </div>
 
                         </div>

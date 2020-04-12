@@ -14,6 +14,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { BienimmobComponent } from './bienimmob/bienimmob.component';
+import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
+import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CommonModule } from '@angular/common';
     ClientListComponent,
     ProprietairesComponent,
     ProprietaireListComponent,
-    AccueilComponent
+    AccueilComponent,
+    BienimmobComponent,
+    TableauimmoComponent,
+    ImmobFormComponent
   ],
   imports: [
     BrowserModule,
