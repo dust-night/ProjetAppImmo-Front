@@ -1,4 +1,4 @@
-import { ClientListComponent } from './client/client-list/client-list.component';
+// import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientComponent } from './client/client.component';
 import { ClientFormComponent } from './client/client-form/client-form.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +12,7 @@ const routes: Routes = [
 {path: 'client', component: ClientComponent,children: [
 {path: 'form', component: ClientFormComponent},
 {path: 'edit/:id', component:ClientFormComponent},
-{path: 'list', component: ClientListComponent}
+// {path: 'list', component: ClientListComponent}
 
 
 
