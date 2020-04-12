@@ -1,10 +1,11 @@
 <div class="row">
     <div class="container">
         <form>
-            <div  class="card-header" id="headingOne">
+            <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Ajouter un nouveau bien 
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        Ajouter un nouveau bien
                     </button>
                 </h2>
             </div>
@@ -16,8 +17,11 @@
                             <label for="id">Id</label>
                             <input type="number" class="form-control" formControlName="id" />
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-md-6">
                             <label for="type">Type</label>
+                            <br>
                             <select id="type">
                                 <option value="maison">Maison</option>
                                 <option value="appartement">Appartement</option>
@@ -31,10 +35,46 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="date">Date de soumission </label>
-                            &nbsp;
-                            <input type="date"/>
+                            &nbsp; &nbsp; &nbsp;
+                            <input type="date" />
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="statut">Statut :</label><br>
+                            <label for="disponible">Disponible</label>
+                            <input class="ecart" type="radio" id="disponible" name="statut" value="disponible">
+                            &nbsp;
+                            <label for="acheté">Acheté</label>
+                            <input class="ecart" type="radio" id="acheté" name="statut" value="acheté">
+                            &nbsp;
+                            <label for="loué">Loué</label>
+                            <input class="ecart" type="radio" id="loué" name="statut" value="loué">
+                        </div>
+                    </div>
 
+                    <p>..............................</p>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="offre">Mode d'Offre :</label><br>
+                            <label for="à loué">A loué</label>
+                            <input class="ecart" type="radio" id="à loué" name="statut" value="à loué">
+                            &nbsp;
+                            <label for="à acheté">A acheté</label>
+                            <input class="ecart" type="radio" id="à acheté" name="statut" value="à acheté">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div class="input-group mb-3">
+                                <label for="revenue">Revenue Cadastral :</label><br>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">&euro;</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
