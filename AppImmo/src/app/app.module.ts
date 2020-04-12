@@ -11,13 +11,15 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { ContratsComponent } from './contrats/contrats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProprietairesComponent,
     ProprietaireListComponent,
-    AccueilComponent
+    AccueilComponent,
+    ContratsComponent
   ],
   imports: [
     BrowserModule,
