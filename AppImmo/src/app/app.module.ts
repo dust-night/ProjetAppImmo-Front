@@ -15,6 +15,9 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ContratsComponent } from './contrats/contrats.component';
+import { BienimmobComponent } from './bienimmob/bienimmob.component';
+import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
+import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ContratsComponent } from './contrats/contrats.component';
     ProprietairesComponent,
     ProprietaireListComponent,
     AccueilComponent,
-    ContratsComponent
+    ContratsComponent,
+    BienimmobComponent,
+    TableauimmoComponent,
+    ImmobFormComponent
   ],
   imports: [
     BrowserModule,
