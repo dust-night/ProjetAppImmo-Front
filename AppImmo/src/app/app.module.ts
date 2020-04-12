@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClientComponent } from './client/client.component';
+import { ClientFormComponent } from './client/client-form/client-form.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
 import { ProprietairesComponent } from './proprietaires/proprietaires.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProprietaireListComponent } from './proprietaire-list/proprietaire-list.component';
@@ -16,6 +19,9 @@ import { ContratsComponent } from './contrats/contrats.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ClientComponent,
+    ClientFormComponent,
+    ClientListComponent,
     ProprietairesComponent,
     ProprietaireListComponent,
     AccueilComponent,

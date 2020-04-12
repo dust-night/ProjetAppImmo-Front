@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="container">
+        <form>
+            <div class="card">
+                <div class="card-header"  id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Ajouter un nouveau Client
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="id">Id</label>
+                                <input type="number" class="form-control" formControlName="id" />
+                                <p *ngIf="form.get('id').invalid && form.get('id').touched" style="color: red;">Id est
+                                    obligatoire</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" formControlName="nom" />
+                                <div *ngIf="form.get('nom').invalid && form.get('nom').touched">
+                                    <p *ngIf="form.get('nom').errors.required" style="color:red">Nom est obligatoire !
+                                    </p>
+                                    <p *ngIf="form.get('nom').errors.minlength || form.get('nom').errors.maxlength"
+                                        style="color: red">Nom doit contenir entre 5 et 20 caractères !</p>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="prenom">Prenom</label>
+                                <input type="text" class="form-control" formControlName="prenom" />
+                                <div *ngIf="form.get('prenom').invalid && form.get('prenom').touched">
+                                    <p *ngIf="form.get('prenom').errors.required" style="color:red">Nom est obligatoire
+                                        !</p>
+                                    <p *ngIf="form.get('prenom').errors.minlength || form.get('prenom').errors.maxlength"
+                                        style="color: red">Nom doit contenir entre 5 et 20 caractères !</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="adresse">Adresse</label>
+                                <input type="text" class="form-control" formControlName="adresse" />
+                                <input type="text" readonly class="form-control-plaintext"
+                                    value="n° de voie, nom de la rue, code postal, Ville " />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="numero">Numero personnelle</label>
+                                <input type="text" class="form-control" formControlName="numero" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="submit" class="btn btn-sucess" [disabled]="!form.valid" *ngIf="!mode"
+                                    value="save" class="change" />
+                                <input type="submit" class="btn btn-sucess" [disabled]="!form.valid" *ngIf="mode"
+                                    value="update" class="change2" />
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
