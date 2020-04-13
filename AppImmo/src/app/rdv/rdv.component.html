@@ -59,6 +59,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="row ">
+
+                    <div class="form-group col-md-6">
+                        <label for="nom">Nom du responsable de visite: </label>
+                        <input type="text" id="nom" class="form-control" formControlName="nom" />
+                        <div *ngIf="form.get('nom').invalid && form.get('nom').touched">
+                            <p *ngIf="form.get('nom').errors.required" style="color: red">Rentrez un nom</p>
+                            <p *ngIf="form.get('nom').errors.minlength" style="color: red">Le nom doit contenir au
+                                minimum 2 caractères</p>
+                            <p *ngIf="form.get('nom').errors.maxlength" style="color: red">Le nom doit contenir
+                                au
+                                maximum 20 caractères</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="row">
                     <div class="form-group col-md-6">

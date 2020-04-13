@@ -12,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     constructor() { }
   ngOnInit(): void {
     this.form = new FormGroup({
+      nom: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       numvisite: new FormControl(null, Validators.required),
       numbien: new FormControl(null, Validators.required),
       date: new FormControl(null, Validators.required),
