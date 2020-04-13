@@ -4,8 +4,15 @@
     <div class="container">
         <form [formGroup]="form">
             <div class="card">
-                <div class="card-header" style="color:#037F8C; font-weight: bold;">Gestion des contrats</div>
+                <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn " style="color:#037F8C; font-weight: bold;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Ajouter un contrat
+                    </button>
+                </h5>
+              </div>
           
+              <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -113,9 +120,11 @@
                         &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C;" />
                     </div>
                 </div>
-
+                </div>
             </div>
     </div>
     </form>
 </div>
 </div>
+
+<app-contrat-list></app-contrat-list>

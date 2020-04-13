@@ -1,0 +1,78 @@
+<br>
+<div class="row">
+    <div class="container">
+        <form [formGroup]="form">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+
+                
+                <h5 class="mb-0">
+                  <button class="btn btn " style="color:#037F8C; font-weight: bold;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Ajouter un rendez-vous
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
+
+                <div class="card-body">
+                    <div class="row ">
+
+                        <div class="form-group col-md-6">
+                            <label for="numvisite">Numéro de visite: </label>
+                            <input type="text" id="numvisite" class="form-control" formControlName="numvisite" />
+                            <div *ngIf="form.get('numvisite').invalid && form.get('numvisite').touched">
+                                <p *ngIf="form.get('numvisite').errors.required" style="color: red">Rentrez un numéro de visite</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+
+                        <div class="form-group col-md-6">
+                            <label for="numbien">Numéro du bien visité : </label>
+                            <input type="text" class="form-control" id="numbien" formControlName="numbien" />
+                            <div *ngIf="form.get('numbien').invalid && form.get('numbien').touched">
+                                <p *ngIf="form.get('numbien').errors.required" style="color: red">Rentrez le numéro du bien qui va être visité
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="date">Date et heure de visite : </label>
+                        <input type="date" class="form-control" formControlName="date"  id="date" value="2018-07-22" min="2020-01-01" max="2070-12-31">
+                        <div *ngIf="form.get('date').invalid && form.get('date').touched">
+                            <p *ngIf="form.get('date').errors.required" style="color: red">Veuillez indiquer la date et l'heure
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="heure">Heure de visite : </label>
+                        <input type="time" class="form-control" id="heure" formControlName="heure" min="09:00" max="18:00" required/>
+                        <div *ngIf="form.get('heure').invalid && form.get('heure').touched">
+                            <p *ngIf="form.get('heure').errors.required" style="color: red">Veuillez indiquer l'heure
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group col-md-6">
+
+                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56;" />
+
+                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C;" />
+                    </div>
+                </div>
+</div>
+            </div>
+    </div>
+    </form>
+</div>
+</div>
+
+<app-rdv-list></app-rdv-list>
