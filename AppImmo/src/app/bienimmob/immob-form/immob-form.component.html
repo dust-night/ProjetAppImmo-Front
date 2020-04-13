@@ -12,52 +12,56 @@
             <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-group col-md-6">
                             <label for="id">Id</label>
                             <input type="number" class="form-control" formControlName="id" />
                         </div>
-                    </div>
+                    </div><br> -->
+
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="type">Type</label>
-                            <br>
-                            <select id="type">
-                                <option value="maison">Maison</option>
-                                <option value="appartement">Appartement</option>
-                                <option value="studio">Studio</option>
-                                <option value="entrepot">Entrepôt</option>
-                                <option value="emplacement">Emplacement</option>
-                                <option value="terrain">Terrain</option>
-                            </select>
+                        <div class="item">
+                            <div class="form-group">
+                                <label for="type">Type :</label>
+                                <br>
+                                <select id="type">
+                                    <option value="maison">Maison</option>
+                                    <option value="appartement">Appartement</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="entrepot">Entrepôt</option>
+                                    <option value="emplacement">Emplacement</option>
+                                    <option value="terrain">Terrain</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="date">Date de soumission </label>
-                            &nbsp; &nbsp; &nbsp;
-                            <input type="date" />
+                        <div class="item">
+                            <div class="form-group" >
+                                <label for="date">Date de soumission :</label>
+                                <br>
+                                <input type="date" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="statut">Statut :</label><br>
-                            <label for="disponible">Disponible</label>
-                            <input class="ecart" type="radio" id="disponible" name="statut" value="disponible">
-                            &nbsp;
-                            <label for="acheté">Acheté</label>
-                            <input class="ecart" type="radio" id="acheté" name="statut" value="acheté">
-                            &nbsp;
-                            <label for="loué">Loué</label>
-                            <input class="ecart" type="radio" id="loué" name="statut" value="loué">
+                        <div class="item">
+                            <div class="form-group">
+                                <label for="statut">Statut :</label><br>
+                                <label for="disponible">Disponible</label>
+                                <input class="ecart" type="radio" id="disponible" name="statut" value="disponible">
+                                
+                                <label for="acheté">Acheté</label>
+                                <input class="ecart" type="radio" id="acheté" name="statut" value="acheté">
+                                
+                                <label for="loué">Loué</label>
+                                <input class="ecart" type="radio" id="loué" name="statut" value="loué">
+                            </div>
                         </div>
                     </div>
 
-                    <p>..............................</p>
+
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="offre">Mode d'Offre :</label><br>
+                            <label for="offre">Mode d'Offre :</label>
+                            &nbsp;
                             <label for="à loué">A loué</label>
                             <input class="ecart" type="radio" id="à loué" name="statut" value="à loué">
                             &nbsp;
@@ -68,15 +72,23 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="input-group mb-3">
-                                <label for="revenue">Revenue Cadastral :</label><br>
-                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <label for="revenue">Revenue Cadastral :</label>&nbsp;
+                                <input type="number" step="0.1" class="form-control" aria-label="Amount (to the nearest dollar)">
                                 <div class="input-group-append">
                                     <span class="input-group-text">&euro;</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="submit" class="btn btn-sucess" style="background-color:#F5CD56; border-radius: 20px;"
+                                value="Ajouter" />&nbsp;
+                            <input type="submit" class="btn btn-sucess" style="background-color:#037F8C; border-radius: 20px;"
+                                value="Modifier"  />
+                        </div>
 
+                    </div>
 
 
                 </div>
