@@ -1,30 +1,43 @@
+
 <br>
 <div class="row">
     <div class="container">
         <form [formGroup]="form">
             <div class="card">
                 <div class="card-header" id="headingOne">
-
-                
                 <h5 class="mb-0">
-                  <button class="btn btn " style="color:#037F8C; font-weight: bold;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Ajouter un propriétaire
-                  </button>
+                    <button class="btn btn " style="color:#037F8C; font-weight: bold;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Ajouter un contrat
+                    </button>
                 </h5>
               </div>
           
               <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordion">
-
-
-
-
-
-
                 <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="type">Type de contrat :</label> &nbsp; 
+                            <select name="contrat" >
+                                <option value="">--Choisissez--</option>
+                                <option value="loc">Location</option>
+                                <option value="ven">Vente</option>
+                            </select>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="type">Référence du contrat :</label> 
+                            <input type="text" id="ref" class="form-control" formControlName="ref" />
+                            <div *ngIf="form.get('ref').invalid && form.get('ref').touched">
+                                <p *ngIf="form.get('ref').errors.required" style="color: red">Rentrez une référence de contrat</p>   
+                        </div>
+                        </div>
+                    </div>
                     <div class="row ">
 
                         <div class="form-group col-md-6">
-                            <label for="nom">Nom : </label>
+                            <label for="nom">Nom du client : </label>
                             <input type="text" id="nom" class="form-control" formControlName="nom" />
                             <div *ngIf="form.get('nom').invalid && form.get('nom').touched">
                                 <p *ngIf="form.get('nom').errors.required" style="color: red">Rentrez un nom</p>
@@ -39,7 +52,7 @@
                     <div class="row ">
 
                         <div class="form-group col-md-6">
-                            <label for="prenom">Prenom : </label>
+                            <label for="prenom">Prenom du client : </label>
                             <input type="text" class="form-control" id="prenom" formControlName="prenom" />
                             <div *ngIf="form.get('prenom').invalid && form.get('prenom').touched">
                                 <p *ngIf="form.get('prenom').errors.required" style="color: red">Rentrez un prénom
@@ -55,8 +68,8 @@
                     </div>
                     <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="adresse">Adresse : </label>
-                        <input type="text" class="form-control" id="adresse" formControlName="adresse" placeholder="N° de voie voirie code postal Ville"/>
+                        <label for="adresse">Adresse du client : </label>
+                        <input type="text" class="form-control" id="adresse" formControlName="adresse" />
                         <div *ngIf="form.get('adresse').invalid && form.get('adresse').touched">
                             <p *ngIf="form.get('adresse').errors.required" style="color: red">L'adresse est obligatoire
                             </p>
@@ -65,25 +78,38 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="telperso">Téléphone personel : </label>
-                        <input type="text" class="form-control" id="telperso" formControlName="telperso" />
-                        <div *ngIf="form.get('telperso').invalid && form.get('telperso').touched">
-                            <p *ngIf="form.get('telpro').errors.required" style="color: red">Le numéro de téléphone
-                                personel est obligatoire
+                        <label for="contact">Contact : </label>
+                        <input type="text" class="form-control" id="contact" formControlName="contact" />
+                        <div *ngIf="form.get('contact').invalid && form.get('contact').touched">
+                            <p *ngIf="form.get('contact').errors.required" style="color: red">Le contact est obligatoire
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="telpro">Téléphone professionel : </label>
-                        <input type="text" class="form-control" id="telpro" formControlName="telpro" />
-                        <div *ngIf="form.get('telpro').invalid && form.get('telpro').touched">
-                            <p *ngIf="form.get('telpro').errors.required" style="color: red">Le numéro de téléphone
-                                professionel est obligatoire
+                        <label for="date">Date d'achat : </label>
+                        <input type="date" class="form-control" formControlName="date"  id="date" value="2018-07-22" min="2020-01-01" max="2070-12-31">
+                        <div *ngIf="form.get('date').invalid && form.get('date').touched">
+                            <p *ngIf="form.get('date').errors.required" style="color: red"> La date est obligatoire
                             </p>
                         </div>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="prix">Prix d'achat : </label>
+                        <div class="input-group mb-3">
+                        <input type="prix" class="form-control" id="prix" formControlName="prix" >
+                        <div class="input-group-append">
+                            <span class="input-group-text">€</span>
+                          </div>
+                        </div>
+                        <div *ngIf="form.get('prix').invalid && form.get('prix').touched">
+                            <p *ngIf="form.get('prix').errors.required" style="color: red">Le prix est obligatoire
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -94,11 +120,11 @@
                         &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C;" />
                     </div>
                 </div>
-</div>
+                </div>
             </div>
     </div>
     </form>
 </div>
 </div>
 
-<app-proprietaire-list></app-proprietaire-list>
+<app-contrat-list></app-contrat-list>

@@ -1,3 +1,4 @@
+
 import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
 import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
 import { BienimmobComponent } from './bienimmob/bienimmob.component';
@@ -8,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProprietairesComponent } from './proprietaires/proprietaires.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ContratsComponent } from './contrats/contrats.component';
+import { RdvComponent } from './rdv/rdv.component';
 
 
 const routes: Routes = [
@@ -23,6 +26,8 @@ const routes: Routes = [
 
 {path:'proprietaires', component:ProprietairesComponent},
 {path:'accueil', component:AccueilComponent},
+{path:'contrats',component:ContratsComponent},
+{path:'rdv', component:RdvComponent},
 
 {path: 'bienimmob', component: BienimmobComponent, children: [
 {path: 'tableauimmo', component: TableauimmoComponent},
