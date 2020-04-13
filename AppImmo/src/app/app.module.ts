@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,9 +15,15 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { ContratsComponent } from './contrats/contrats.component';
 import { BienimmobComponent } from './bienimmob/bienimmob.component';
 import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
 import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
+import { ContratListComponent } from './contrat-list/contrat-list.component';
+import { RdvComponent } from './rdv/rdv.component';
+import { RdvListComponent } from './rdv-list/rdv-list.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,9 +34,13 @@ import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component'
     ProprietairesComponent,
     ProprietaireListComponent,
     AccueilComponent,
+    ContratsComponent,
     BienimmobComponent,
     TableauimmoComponent,
-    ImmobFormComponent
+    ImmobFormComponent,
+    ContratListComponent,
+    RdvComponent,
+    RdvListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +50,7 @@ import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component'
     FlatpickrModule,
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
    
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
     
