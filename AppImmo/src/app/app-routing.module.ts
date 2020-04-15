@@ -11,6 +11,9 @@ import { ProprietairesComponent } from './proprietaires/proprietaires.component'
 import { AccueilComponent } from './accueil/accueil.component';
 import { ContratsComponent } from './contrats/contrats.component';
 import { RdvComponent } from './rdv/rdv.component';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
+import { AuthGuard } from './_guards';
 
 
 const routes: Routes = [
@@ -18,9 +21,6 @@ const routes: Routes = [
 {path: 'form', component: ClientFormComponent},
 {path: 'edit/:id', component:ClientFormComponent},
 {path: 'list', component: ClientListComponent}
-
-
-
 ]
 },
 
@@ -35,6 +35,11 @@ const routes: Routes = [
 
 
 ]},
+{ path: 'login', component: LoginComponent },
+{ path: 'register', component: RegisterComponent },
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 
 ];
 
