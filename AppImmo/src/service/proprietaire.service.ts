@@ -1,41 +1,41 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
-// @Injectable()
-// export class ProprietaireService {
+@Injectable()
+export class ProprietaireService {
 
-// proprietaires: any [] = [];
-// editMode = false;
-// URL ='http://localhost:8082/apiCandidat';
-// constructor (private http: HttpClient){
+proprietaires: any [] = [];
+editMode = false;
+URL ='http://localhost:8082/apiProprietaire';
+constructor (private http: HttpClient){
 
-// }
+}
 
-// add(proprietaire){
+add(proprietaire){
 
-//     return this.http.post(this.URL+'/ajout', proprietaire, { observe: 'response'});
-// }
+    return this.http.post(this.URL+'/add', proprietaire, { observe: 'response'});
+}
 
-// update (proprietaire){
+update(proprietaire){
 
-//     return this.http.put(this.URL+'/update',proprietaire, { observe: 'response'});
-// }
+    return this.http.put(this.URL+'/update',proprietaire, { observe: 'response'});
+}
 
-// findAll(){
-// return this.http.get<any[]>(this.URL+'/candidats/').pipe(map(value => this.proprietaires = value))
-// }
+findAll(){
+return this.http.get<any[]>(this.URL+'/proprietaires/').pipe(map(value => this.proprietaires = value))
+}
 
-// delete (index){
-//     return this.http.delete(this.URL+'/delete/'+ index);
-// }
+delete (id){
+    return this.http.delete(this.URL+'/delete/'+ id);
+}
 
-// getOne (index){
-//     return this.http.get<any>(this.URL+'/candidat/'+ index);
-// }
-
-
+getOne (id){
+    return this.http.get<any>(this.URL+'/proprietaire/'+ id);
+}
 
 
-// }
+
+
+}

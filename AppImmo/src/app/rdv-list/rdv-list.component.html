@@ -1,6 +1,6 @@
 <br>
-<div class="row" > 
-    <!-- *ngIf="candidatsList.length>0" -->
+<div class="row" *ngIf="rdvsList.length>0"> 
+    
   <div class="container">
     <div class="card">
       <div class="card-header" style="color:#037F8C; font-weight: bold;">Liste des rendez-vous </div>
@@ -17,17 +17,17 @@
             <th>Responsable de visite</th>
             
           </thead>
-          <!-- <tr *ngFor="let p of candidatsList;let i=index">
-            <td> {{p.nom}}</td>
-            <td>{{p.prenom}}</td>
-            <td>{{p.adresse}}</td>
-            <td>{{p.telpro}}</td>
-            <td>{{p.telperso}}</td>
-            <td> <input type="submit" value="Editer" class="btn btn-warning" (click)="edit(p.i)"/></td>
-            <td><input type="submit" value="Supprimer" class="btn btn-danger" (click)="delete(p.i)"/></td> -->
+          <tr *ngFor="let r of rdvsList;let i=index">
+            <td> {{r.idVisite}}</td>
+            <td>{{r.bien}}</td>
+            <td>{{r.dateVisite}}</td>
+            <td>{{r.heure}}</td>
+            <td>{{r.conseiller}}</td>
+            <td> <input type="submit" value="Editer" class="btn btn-warning" (click)="edit(r.id)"/></td>
+            <td><input type="submit" value="Supprimer" class="btn btn-danger" (click)="delete(r.id,i)"/></td> 
         
 
-          <!-- </tr> -->
+          </tr>
         </table>
       </div>
     </div>

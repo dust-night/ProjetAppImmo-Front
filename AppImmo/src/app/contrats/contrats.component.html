@@ -16,8 +16,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="type">Type de contrat :</label> &nbsp; 
-                            <select name="contrat" >
+                            <label for="modeOffre">Type de contrat :</label> &nbsp; 
+                            <select name="contrat" id="modeOffre" class="form-control" formControlName="modeOffre"  >
                                 <option value="">--Choisissez--</option>
                                 <option value="loc">Location</option>
                                 <option value="ven">Vente</option>
@@ -27,10 +27,10 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="type">Référence du contrat :</label> 
-                            <input type="text" id="ref" class="form-control" formControlName="ref" />
-                            <div *ngIf="form.get('ref').invalid && form.get('ref').touched">
-                                <p *ngIf="form.get('ref').errors.required" style="color: red">Rentrez une référence de contrat</p>   
+                            <label for="referenceContrat">Référence du contrat :</label> 
+                            <input type="text" id="referenceContrat" class="form-control" formControlName="referenceContrat" />
+                            <div *ngIf="form.get('referenceContrat').invalid && form.get('referenceContrat').touched">
+                                <p *ngIf="form.get('referenceContrat').errors.required" style="color: red">Rentrez une référence de contrat</p>   
                         </div>
                         </div>
                     </div>
@@ -78,20 +78,20 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="contact">Contact : </label>
-                        <input type="text" class="form-control" id="contact" formControlName="contact" />
-                        <div *ngIf="form.get('contact').invalid && form.get('contact').touched">
-                            <p *ngIf="form.get('contact').errors.required" style="color: red">Le contact est obligatoire
+                        <label for="numeroTelephonePersonnel">Contact : </label>
+                        <input type="text" class="form-control" id="numeroTelephonePersonnel" formControlName="numeroTelephonePersonnel" />
+                        <div *ngIf="form.get('numeroTelephonePersonnel').invalid && form.get('numeroTelephonePersonnel').touched">
+                            <p *ngIf="form.get('numeroTelephonePersonnel').errors.required" style="color: red">Le contact est obligatoire
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="date">Date d'achat : </label>
-                        <input type="date" class="form-control" formControlName="date"  id="date" value="2018-07-22" min="2020-01-01" max="2070-12-31">
-                        <div *ngIf="form.get('date').invalid && form.get('date').touched">
-                            <p *ngIf="form.get('date').errors.required" style="color: red"> La date est obligatoire
+                        <label for="dateAchat">Date d'achat : </label>
+                        <input type="date" class="form-control" formControlName="dateAchat"  id="dateAchat" value="2018-07-22" min="2020-01-01" max="2070-12-31">
+                        <div *ngIf="form.get('dateAchat').invalid && form.get('dateAchat').touched">
+                            <p *ngIf="form.get('dateAchat').errors.required" style="color: red"> La date est obligatoire
                             </p>
                         </div>
 
@@ -99,15 +99,15 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="prix">Prix d'achat : </label>
+                        <label for="prixAchat">Prix d'achat : </label>
                         <div class="input-group mb-3">
-                        <input type="prix" class="form-control" id="prix" formControlName="prix" >
+                        <input type="prixAchat" class="form-control" id="prixAchat" formControlName="prixAchat" >
                         <div class="input-group-append">
                             <span class="input-group-text">€</span>
                           </div>
                         </div>
-                        <div *ngIf="form.get('prix').invalid && form.get('prix').touched">
-                            <p *ngIf="form.get('prix').errors.required" style="color: red">Le prix est obligatoire
+                        <div *ngIf="form.get('prixAchat').invalid && form.get('prixAchat').touched">
+                            <p *ngIf="form.get('prixAchat').errors.required" style="color: red">Le prix est obligatoire
                             </p>
                         </div>
                     </div>
@@ -115,9 +115,9 @@
                 <div class="row">
                     <div class="form-group col-md-6">
 
-                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" />
+                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" (click)="addContrat ()"/>
 
-                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" />
+                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" (click)="updateContrat ()" />
                     </div>
                 </div>
                 </div>
