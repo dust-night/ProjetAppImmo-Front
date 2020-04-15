@@ -41,6 +41,7 @@ proprietaire: any;
     this.ProprietaireService.add(this.form.value).subscribe(response =>{
     this.ProprietaireService.proprietaires.push(response.body);
     console.log(this.ProprietaireService.proprietaires);
+    this.form.reset();
   
   });
   }

@@ -31,8 +31,10 @@ const routes: Routes = [
 {path:'accueil', component:AccueilComponent},
 {path:'contrats',component:ContratsComponent},
 {path:'rdv', component:RdvComponent},
+
 {path: 'bienimmob', component: BienimmobComponent, children: [
 {path: 'tableauimmo', component: TableauimmoComponent},
+{path: 'edit/:id',component: ImmobFormComponent},
 {path: 'immoform', component: ImmobFormComponent}
 
 

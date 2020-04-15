@@ -39,7 +39,7 @@ export class TableauimmoComponent implements OnInit {
   
   edit(id){
   
-    this.router.navigate(['/bienimmob/edit', id]);
+    this.router.navigate(['/bienimmo/edit', id]);
     this.BienService.editMode = true;
   }
 
