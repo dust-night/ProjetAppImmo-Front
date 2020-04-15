@@ -6,7 +6,7 @@
             <div class="card-body">
                 <table class="table">
                     <thead class="thead-light">
-                        <th>Id</th>
+
                         <th>Type</th>
                         <th>Date de soumission</th>
                         <th>Statut</th>
@@ -14,14 +14,15 @@
                         <th>Localisation</th>
                         <th>Revenu Cadastral</th>
                     </thead>
-                    <!-- <tr *ngFor="let c of candidatsList;let i=index">
-                        <td> {{c.id}}</td>
-                        <td>{{c.nom}}</td>
-                        <td>{{c.prenom}}</td>
-                        <td>{{c.age}}</td>
-                        <td><input type="submit" value="Edit" class="btn btn-warning" ></td>
-                        <td><input type="submit" value="Delete" class="btn btn-danger"></td>
-                    </tr> -->
+                    <tr *ngFor="let b of BienList;let i=index">
+                        <td> {{b.typeBien}}</td>
+                        <td>{{b.dateSoumission}}</td>
+                        <td>{{b.modeOffre}}</td>
+                        <td>{{b.localisation}}</td>
+                        <td>{{b.revenuCadastral}}</td>
+                        <td><input type="submit" value="Edit" class="btn btn-warning" (click)="edit(b.id)" ></td>
+                        <td><input type="submit" value="Delete" class="btn btn-danger" (click)="delete(b.id,i)"></td>
+                    </tr>
 
                 </table>
 

@@ -65,10 +65,10 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="telperso">Téléphone personel : </label>
-                        <input type="text" class="form-control" id="telperso" formControlName="telperso" />
-                        <div *ngIf="form.get('telperso').invalid && form.get('telperso').touched">
-                            <p *ngIf="form.get('telpro').errors.required" style="color: red">Le numéro de téléphone
+                        <label for="numeroTelephonePersonnel">Téléphone personel : </label>
+                        <input type="text" class="form-control" id="numeroTelephonePersonnel" formControlName="numeroTelephonePersonnel" />
+                        <div *ngIf="form.get('numeroTelephonePersonnel').invalid && form.get('numeroTelephonePersonnel').touched">
+                            <p *ngIf="form.get('numeroTelephonePersonnel').errors.required" style="color: red">Le numéro de téléphone
                                 personel est obligatoire
                             </p>
                         </div>
@@ -76,10 +76,10 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="telpro">Téléphone professionel : </label>
-                        <input type="text" class="form-control" id="telpro" formControlName="telpro" />
-                        <div *ngIf="form.get('telpro').invalid && form.get('telpro').touched">
-                            <p *ngIf="form.get('telpro').errors.required" style="color: red">Le numéro de téléphone
+                        <label for="telephonePro">Téléphone professionel : </label>
+                        <input type="text" class="form-control" id="telephonePro" formControlName="telephonePro" />
+                        <div *ngIf="form.get('telephonePro').invalid && form.get('telephonePro').touched">
+                            <p *ngIf="form.get('telephonePro').errors.required" style="color: red">Le numéro de téléphone
                                 professionel est obligatoire
                             </p>
                         </div>
@@ -89,9 +89,9 @@
                 <div class="row">
                     <div class="form-group col-md-6">
 
-                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" />
+                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" (click)="addProprietaire()"/>
 
-                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" />
+                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" (click)="updateProprietaire()"/>
                     </div>
                 </div>
 </div>

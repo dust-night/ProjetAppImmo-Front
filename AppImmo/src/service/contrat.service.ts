@@ -1,41 +1,41 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
-// @Injectable()
-// export class ContratService {
+@Injectable()
+export class ContratService {
 
-// contrats: any [] = [];
-// editMode = false;
-// URL ='http://localhost:8082/apiCandidat'; ///////// CHANGER  TOUS LES URL///////
-// constructor (private http: HttpClient){
+contrats: any [] = [];
+editMode = false;
+URL ='http://localhost:8082/apiContrat'; 
+constructor (private http: HttpClient){
 
-// }
+}
 
-// add(contrat){
+add(contrat){
 
-//     return this.http.post(this.URL+'/ajout', contrat, { observe: 'response'});
-// }
+    return this.http.post(this.URL+'/add', contrat, { observe: 'response'});
+}
 
-// update (contrat){
+update (contrat){
 
-//     return this.http.put(this.URL+'/update',contrat, { observe: 'response'});
-// }
+    return this.http.put(this.URL+'/update',contrat, { observe: 'response'});
+}
 
-// findAll(){
-// return this.http.get<any[]>(this.URL+'/candidats/').pipe(map(value => this.contrats = value))
-// }
+findAll(){
+return this.http.get<any[]>(this.URL+'/contrats/').pipe(map(value => this.contrats = value))
+}
 
-// delete (index){
-//     return this.http.delete(this.URL+'/delete/'+ index);
-// }
+delete (id){
+    return this.http.delete(this.URL+'/delete/'+ id);
+}
 
-// getOne (index){
-//     return this.http.get<any>(this.URL+'/candidat/'+ index);
-// }
-
-
+getOne (id){
+    return this.http.get<any>(this.URL+'/contrat/'+ id);
+}
 
 
-// }
+
+
+}

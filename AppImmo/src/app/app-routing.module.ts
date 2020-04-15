@@ -1,3 +1,4 @@
+import { ProprietaireListComponent } from './proprietaire-list/proprietaire-list.component';
 
 import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component';
 import { TableauimmoComponent } from './bienimmob/tableauimmo/tableauimmo.component';
@@ -20,17 +21,23 @@ const routes: Routes = [
 {path: 'client', component: ClientComponent,children: [
 {path: 'form', component: ClientFormComponent},
 {path: 'edit/:id', component:ClientFormComponent},
-{path: 'list', component: ClientListComponent}
+{path: 'list', component:ClientListComponent}
+
+
+
+
 ]
 },
 
 {path:'proprietaires', component:ProprietairesComponent},
+{path:'edit/:id', component:ProprietairesComponent},
 {path:'accueil', component:AccueilComponent},
 {path:'contrats',component:ContratsComponent},
 {path:'rdv', component:RdvComponent},
 
 {path: 'bienimmob', component: BienimmobComponent, children: [
 {path: 'tableauimmo', component: TableauimmoComponent},
+{path: 'edit/:id',component: ImmobFormComponent},
 {path: 'immoform', component: ImmobFormComponent}
 
 
@@ -40,6 +47,8 @@ const routes: Routes = [
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
+
+
 
 ];
 

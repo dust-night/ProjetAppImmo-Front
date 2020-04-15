@@ -79,9 +79,9 @@
                 <div class="row">
                     <div class="form-group col-md-6">
 
-                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" />
+                        <input type="submit" class="btn" value="Valider" [disabled]="!form.valid" style="background-color:#F5CD56; border-radius: 20px" (click)="addRdv()"/>
 
-                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" />
+                        &nbsp; <input type="submit" class="btn" value="Modifier" [disabled]="!form.valid" style="background-color:#037F8C; border-radius: 20px" (click)="updateRdv()"/>
                     </div>
                 </div>
 </div>

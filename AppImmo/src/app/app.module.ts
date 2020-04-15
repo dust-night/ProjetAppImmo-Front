@@ -1,3 +1,4 @@
+import { ProprietaireService } from 'src/service/proprietaire.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -31,6 +32,9 @@ import { RegisterComponent } from './register';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
+import { RdvService } from 'src/service/rdv.service';
+import { ContratService } from 'src/service/contrat.service';
+
 
 
 @NgModule({
@@ -65,6 +69,9 @@ import { fakeBackendProvider } from './_helpers';
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    
+  
    
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
     
@@ -79,8 +86,8 @@ import { fakeBackendProvider } from './_helpers';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
-  ],
+    fakeBackendProvider,
+  ProprietaireService, RdvService, ContratService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

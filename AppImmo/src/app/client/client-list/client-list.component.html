@@ -11,14 +11,15 @@
                         <th>Adresse</th>
                         <th>Numéro personnel</th>
                     </thead>
-                    <!-- <tr *ngFor="let c of candidatsList;let i=index">
+                    <tr *ngFor="let c of clientsList;let i=index">
                         <td> {{c.id}}</td>
                         <td>{{c.nom}}</td>
                         <td>{{c.prenom}}</td>
-                        <td>{{c.age}}</td>
-                        <td><input type="submit" value="Edit" class="btn btn-warning" ></td>
-                        <td><input type="submit" value="Delete" class="btn btn-danger"></td>
-                    </tr> -->
+                        <td>{{c.adresse}}</td>
+                        <td>{{c.numeroTelephonePersonnel}}</td>
+                        <td><input type="submit" value="Edit" class="btn btn-warning"  (click)="edit(c.id)"></td>
+                        <td><input type="submit" value="Delete" class="btn btn-danger" (click)="delete(c.id,i)"></td>
+                    </tr>
 
                 </table>
 

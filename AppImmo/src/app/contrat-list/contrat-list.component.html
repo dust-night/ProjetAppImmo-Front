@@ -1,6 +1,6 @@
 <br>
-<div class="row" > 
-    <!-- *ngIf="candidatsList.length>0" -->
+<div class="row" *ngIf="contratsList.length>0" > 
+    
   <div class="container">
     <div class="card">
       <div class="card-header" style="color:#037F8C; font-weight: bold;">Liste des contrats </div>
@@ -19,17 +19,20 @@
             <th>Date d'achat</th>
             <th>Prix d'achat</th>
           </thead>
-          <!-- <tr *ngFor="let p of candidatsList;let i=index">
-            <td> {{p.nom}}</td>
-            <td>{{p.prenom}}</td>
-            <td>{{p.adresse}}</td>
-            <td>{{p.telpro}}</td>
-            <td>{{p.telperso}}</td>
-            <td> <input type="submit" value="Editer" class="btn btn-warning" (click)="edit(p.i)"/></td>
-            <td><input type="submit" value="Supprimer" class="btn btn-danger" (click)="delete(p.i)"/></td> -->
+          <tr *ngFor="let c of contratsList;let i=index">
+            <td> {{c.modeOffre}}</td>
+            <td> {{c.referenceContrat}}</td>
+            <td> {{c.nom}}</td>
+            <td>{{c.prenom}}</td>
+            <td>{{c.adresse}}</td>
+            <td>{{c.numeroTelephonePersonnel}}</td>
+            <td>{{c.dateAchat}}</td>
+            <td>{{c.prixAchat}}</td>
+            <td> <input type="submit" value="Editer" class="btn btn-warning" (click)="edit(c.id)"/></td>
+            <td><input type="submit" value="Supprimer" class="btn btn-danger" (click)="delete(c.id, i)"/></td>
         
 
-          <!-- </tr> -->
+          </tr>
         </table>
       </div>
     </div>
