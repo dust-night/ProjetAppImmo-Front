@@ -22,7 +22,7 @@ ajout(bien){
     }
 
     findAll(){
-        return this.http.get<any[]>(this.URL + '/biens').pipe(map(value=>this.biens=value));
+        return this.http.get<any[]>(this.URL + '/biensimmos').pipe(map(value=>this.biens=value));
 
     }
 
@@ -32,7 +32,7 @@ ajout(bien){
     }
 
     getOne(id){
-        return this.http.get<any>(this.URL + '/bien/' +id);
+        return this.http.get<any>(this.URL + '/bienimmo/' +id);
 
     }
 
