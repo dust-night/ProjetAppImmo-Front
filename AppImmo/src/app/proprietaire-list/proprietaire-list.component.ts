@@ -1,6 +1,8 @@
+import { ProprietaireService } from 'src/service/proprietaire.service';
 import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
-// import { ProprietaireService } from 'src/service/proprietaire.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-proprietaire-list',
@@ -9,30 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProprietaireListComponent implements OnInit {
 
-// proprietairesList: any [] = [];
-// constructor( private ProprietaireService: ProprietaireService, private router: Router) { }
+proprietairesList: any [] = [];
+constructor( private ProprietaireService: ProprietaireService, private router: Router) { }
 
 ngOnInit(): void {
-  // this.findAll();
+  this.findAll();
 }
 
- // findAll (){
-//   this.ProprietaireService.findAll().subscribe((value: any [])=>
-//   this.proprietaireList = value
-//   );
+ findAll (){
+  this.ProprietaireService.findAll().subscribe((value: any [])=>
+  this.proprietairesList = value
+  );
   
   
-//     }
+    }
   
-//   delete (index){
-//   this.ProprietaireService.delete(index).subscribe(response =>{
-//   this.ProprietaireService.rdvs.splice(index, 1);
-//   });
-//   }
+  delete (id, index){
+  this.ProprietaireService.delete(id).subscribe(response =>{
+  this.ProprietaireService.proprietaires.splice(index, 1);
+  });
+  }
   
-//   edit(index){
-//   this.router.navigate(['/candidat/edit', id]);
-//   this.ProprietaireService.editMode = true;
-//   }
+  edit(id){
+  this.router.navigate(['/proprietaires/edit', id]);
+  this.ProprietaireService.editMode = true;
+  }
 
 }

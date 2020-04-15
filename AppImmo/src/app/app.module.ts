@@ -1,3 +1,4 @@
+import { ProprietaireService } from 'src/service/proprietaire.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,9 @@ import { ContratListComponent } from './contrat-list/contrat-list.component';
 import { RdvComponent } from './rdv/rdv.component';
 import { RdvListComponent } from './rdv-list/rdv-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RdvService } from 'src/service/rdv.service';
+import { ContratService } from 'src/service/contrat.service';
+
 
 
 @NgModule({
@@ -52,11 +56,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    
+  
+   
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
     
     
   ],
-  providers: [],
+  providers: [ProprietaireService, RdvService, ContratService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
