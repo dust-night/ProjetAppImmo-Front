@@ -22,7 +22,7 @@ import { ImmobFormComponent } from './bienimmob/immob-form/immob-form.component'
 import { ContratListComponent } from './contrat-list/contrat-list.component';
 import { RdvComponent } from './rdv/rdv.component';
 import { RdvListComponent } from './rdv-list/rdv-list.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -51,7 +51,7 @@ import { RdvListComponent } from './rdv-list/rdv-list.component';
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-   
+    HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
     
     

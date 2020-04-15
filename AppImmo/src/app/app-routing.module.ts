@@ -17,7 +17,8 @@ const routes: Routes = [
 {path: 'client', component: ClientComponent,children: [
 {path: 'form', component: ClientFormComponent},
 {path: 'edit/:id', component:ClientFormComponent},
-{path: 'list', component: ClientListComponent}
+{path: 'list', component:ClientListComponent}
+
 
 
 
@@ -35,6 +36,8 @@ const routes: Routes = [
 
 
 ]},
+
+
 
 ];
 

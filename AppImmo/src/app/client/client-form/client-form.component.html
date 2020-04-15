@@ -1,7 +1,7 @@
 <br>
 <div class="row">
     <div class="container">
-        <form>
+        <form [formGroup]="form">
             <div class="card">
                 <div class="card-header"  id="headingOne">
                     <h2 class="mb-0">
@@ -54,17 +54,17 @@
                                     value="n° de voie, nom de la rue, code postal, Ville " />
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="numero">Numero personnel</label>
-                                <input type="text" class="form-control" formControlName="numero" />
+                                <label for="numeroTelephonePersonnel">Numero personnel</label>
+                                <input type="text" class="form-control" formControlName="numeroTelephonePersonnel" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <input type="submit" class="btn btn-sucess" style="background-color:#F5CD56; border-radius: 20px;"
-                                    value="Ajouter" />
+                                    value="Ajouter" (click)="addClient()" />
                                     &nbsp; <input type="submit" class="btn btn-sucess" style="background-color:#037F8C; border-radius: 20px;"
-                                    value="Modifier"  />
+                                    value="Modifier" (click)="updateClient()" />
                             </div>
 
                         </div>
@@ -83,4 +83,3 @@
 
 </div>
 <br>
-<app-client-list></app-client-list>
